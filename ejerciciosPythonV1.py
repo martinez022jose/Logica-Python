@@ -142,3 +142,78 @@ def mostrarLista(lista):
 listaPrueba = [4,2,1,67,-22]
 ordenar(listaPrueba)
 mostrarLista(listaPrueba)
+
+#13- Determinar cantidad de numeros pares dado una lista de numeros
+listaDeNumeros = [2,6,4,5]
+cantidadDePares = 0
+
+def esPar(numero):
+    if numero % 2 == 0:
+        return True
+    return False
+
+for numero in listaDeNumeros:
+    if esPar(numero):
+        cantidadDePares+=1
+
+print(cantidadDePares)
+
+#14- Leer n números enteros, almacenarlos y determinar el promedio de los numeros
+
+def determinarPromedio(numeros):
+    sumaTotal = 0
+    cantidadNumeros = len(numeros)
+    for numero in numeros:
+        sumaTotal+=numero
+    return sumaTotal / cantidadNumeros
+
+def pedirNumeros(numeros):
+    cantidadNumeros = 0
+    limite = int(input("Cantidad de numeros a ingresar: "))
+    while cantidadNumeros < limite:
+        numero = int(input("Ingrese numero: "))
+        numeros.append(numero)
+        cantidadNumeros+=1
+
+numeros = []
+cantidadNumeros = 0
+pedirNumeros(numeros)
+promedio = determinarPromedio(numeros)
+print(promedio)
+
+#15- Leer n números enteros, almacenarlos y determinar el menor numero par de la lista
+
+def min(listaDeNumeros):
+    minimo = listaDeNumeros[0]
+    for numero in listaDeNumeros:
+        if numero < minimo:
+            minimo = numero
+    return minimo
+
+listaDeNumeros = []
+listaDePares = []
+
+pedirNumeros(listaDeNumeros)
+for numero in listaDeNumeros:
+    if esPar(numero):
+        listaDePares.append(numero)
+minimo = min(listaDePares)   
+
+print(minimo)
+
+#15- Dado una elemento, buscar dicho elemento en una lista y determinar posicion. Si no se encuentra retornar -1
+
+def buscarPosicion(elemento,listaDeValores):
+    posicion = 0
+    for numero in listaDeValores:
+        if numero == elemento:
+            return posicion
+        posicion+=1
+    return -1
+    
+listaDeValores = [2,3,4,5,10]
+posElemento = buscarPosicion(10,listaDeValores)
+print(posElemento)       
+
+
+
